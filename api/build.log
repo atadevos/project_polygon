@@ -1,0 +1,76 @@
+Compose now can delegate build to bake for better performances
+Just set COMPOSE_BAKE=true
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [api internal] load build definition from Dockerfile
+#1 transferring dockerfile: 212B done
+#1 DONE 0.0s
+
+#2 [api internal] load metadata for docker.io/library/node:18
+#2 DONE 0.6s
+
+#3 [api internal] load .dockerignore
+#3 transferring context: 108B done
+#3 DONE 0.0s
+
+#4 [api 1/8] FROM docker.io/library/node:18@sha256:df9fa4e0e39c9b97e30240b5bb1d99bdb861573a82002b2c52ac7d6b8d6d773e
+#4 DONE 0.0s
+
+#5 [api 2/8] WORKDIR /app
+#5 CACHED
+
+#6 [api internal] load build context
+#6 transferring context: 1.00kB done
+#6 DONE 0.0s
+
+#7 [api 3/8] COPY package.json ./
+#7 DONE 0.1s
+
+#8 [api 4/8] COPY package-lock.json* ./
+#8 DONE 0.1s
+
+#9 [api 5/8] RUN npm install
+#9 6.422 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+#9 8.558 npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+#9 12.51 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#9 13.33 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#9 13.71 npm warn deprecated gauge@4.0.4: This package is no longer supported.
+#9 18.42 npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+#9 19.58 npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+#9 31.92 
+#9 31.92 added 466 packages, and audited 467 packages in 32s
+#9 31.92 
+#9 31.92 59 packages are looking for funding
+#9 31.92   run `npm fund` for details
+#9 31.92 
+#9 31.92 found 0 vulnerabilities
+#9 31.92 npm notice
+#9 31.92 npm notice New major version of npm available! 10.8.2 -> 11.3.0
+#9 31.92 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.3.0
+#9 31.92 npm notice To update run: npm install -g npm@11.3.0
+#9 31.92 npm notice
+#9 DONE 32.2s
+
+#10 [api 6/8] COPY . .
+#10 DONE 0.0s
+
+#11 [api 7/8] COPY .env.docker .env
+#11 DONE 0.0s
+
+#12 [api 8/8] RUN cat .env
+#12 0.163 LOG_LEVEL=debug
+#12 0.163 RESPONSE_DELAY=5000 #ms
+#12 0.163 LOG_DIR=/app/logs
+#12 0.163 DB_DIR=/app/db
+#12 0.163 PORT=3000
+#12 DONE 0.2s
+
+#13 [api] exporting to image
+#13 exporting layers
+#13 exporting layers 0.4s done
+#13 writing image sha256:ddebffe62752eeb26259699f02776496cd614078e48cb9c539e5ab5179ec5f02 done
+#13 naming to docker.io/library/api-api done
+#13 DONE 0.4s
+
+#14 [api] resolving provenance for metadata file
+#14 DONE 0.0s

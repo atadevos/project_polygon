@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - db-data:${DB_DIR}
+      - logs:${LOG_DIR}
+volumes:
+  db-data:
+  logs:
