@@ -1,6 +1,6 @@
 # Backend
 
-## Docker
+## to run server on docker, use this command
 
 ```cd api && docker-compose  --env-file .env.docker  up -d --build```
 
